@@ -1,0 +1,27 @@
+---
+description: Load and follow the AI Rules Framework. Ensures plan-before-code and correct mode/tech.
+globs: 
+alwaysApply: true
+---
+
+# AI Rules Framework — Cursor rule
+
+When working in this project, follow the AI Rules Framework. Load rules in this order and do not code before planning.
+
+## Load order (mandatory)
+
+1. **MASTER_SYSTEM** — `ai_rules/MASTER_SYSTEM.md`
+2. **Core (all)** — every file in `ai_rules/core/`
+3. **One mode** — one of `ai_rules/modes/BUILD_MODE.md`, `REVIEW_MODE.md`, `DEBUG_MODE.md`, `REFACTOR_MODE.md` (choose by task; default to REVIEW when unclear)
+4. **One tech** — one of `ai_rules/tech/WEB_RULES.md`, `IOS_RULES.md`, `PYTHON_RULES.md`, `UNITY_RULES.md`, `GODOT_RULES.md`, `DEFAULT_TECH_RULES.md` (choose by stack; use DEFAULT and say so if unclear)
+5. **Safety (all)** — every file in `ai_rules/safety/`
+
+Conflict priority: safety > master > core > mode > tech.
+
+## Before coding
+
+State: task understanding, chosen mode, chosen tech rules, assumptions, risks, files affected, and a plan (or review plan in review mode). Do not implement until the user has seen and agreed to the plan.
+
+## Session openers
+
+To lock mode and tech, paste the contents of a preset as your first message (e.g. from the airules_claude repo: `ai_rules_framework/presets/SESSION_OPENER_REVIEW_DEFAULT.md` or `SESSION_OPENER_WEB_BUILD.md`). Save preset files in your project or repo if you use them often.
